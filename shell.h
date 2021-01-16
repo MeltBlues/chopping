@@ -18,6 +18,7 @@ public:
     static QString ctags_cmd(QString,int);
     static QStringList cflow_cmd(QString,QStringList,QString);
     static QString ls_cmd(QString,QString);
+    static void save(QString);
 };
 
 #endif // SHELL_H

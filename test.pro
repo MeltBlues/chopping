@@ -1,4 +1,5 @@
-QT -= gui
+QT += gui
+QT +=sql
 
 CONFIG += c++11 console
 CONFIG -= app_bundle
@@ -18,6 +19,8 @@ SOURCES += \
         c.cpp \
         file.cpp \
         main.cpp \
+        postgresql.cpp \
+        project.cpp \
         shell.cpp \
         tool.cpp
 
@@ -32,5 +35,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     c.h \
     file.h \
+    postgresql.h \
+    project.h \
     shell.h \
     tool.h
+
+FORMS +=

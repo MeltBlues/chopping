@@ -19,6 +19,23 @@ QString shell::exe(QString strCmd){
 
 }
 
+void shell::save(QString e){
+//    QFile file("/home/nss/code20201109/code_visualization/e.dot");
+//    file.open(QIODevice::WriteOnly | QIODevice::Text);
+//    file.write(e.toUtf8());
+//    file.close();
+
+        QFile aFile("/home/nss/code20201109/code_visualization/e.dot");
+        if (!aFile.open(QIODevice::WriteOnly | QIODevice::Text)){
+            qDebug()<<"f"<<endl;
+            return ;}
+        QTextStream aStream(&aFile); //用文本流读取文件
+//        QString str=ui->textEditStream->toPlainText(); //转换为字符串
+        aStream<<e; //写入文本流
+        aFile.close();//关闭文件
+        return;
+}
+
 QStringList shell::split(QString str, QString sign){
     QStringList result_list = str.split(sign);
     result_list.removeOne("");
@@ -61,9 +78,9 @@ QStringList shell::cflow_cmd(QString url,QStringList function_name ,QString n ){
     QStringList cmdList;
     for(int i=0;i<function_name.length();i++){
          cmd = "";
-         cmd.append("cflow -T -m ");
+         cmd.append("cflow -b -m ");
          cmd.append(function_name[i]);
-         cmd.append(" -n ");
+         cmd.append(" ");
          cmd.append(url);
          if(n=="tree2dotx")
             cmd.append(" | tree2dotx");

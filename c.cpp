@@ -49,7 +49,7 @@ C::C(QString name,QString addr)
         this->function_used.append( shell::exe(cmdList[i]));
     }
 
-
+    this->function_num=this->function_name.length();
 
 }
 

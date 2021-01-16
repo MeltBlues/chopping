@@ -5,13 +5,21 @@
 #include"c.h"
 #include"file.h"
 #include"tool.h"
+#include"postgresql.h"
+#include"project.h"
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
+    project * p=new project("9","../workspace/test/");
+       //qDebug().noquote()<< p->f[0]->c[0]->function_name<<endl<<p->f[0]->c[0]->function_num;
+    postgreSQL * sql=new postgreSQL();
+    sql->submit(p);
+//    postgreSQL::driver_test();
+//    postgreSQL *p= new postgreSQL();
 
       //C *cfile = new C("main","../workspace/");
-    file * f=new file("workspace","../");
+//    file * f=new file("workspace","../");
     //QStringList * find=(QStringList * )malloc(sizeof(QStringList) *2);
 //    QStringList  file_name;
 //    QStringList  file_addr;
@@ -33,14 +41,15 @@ int main(int argc, char *argv[])
 //     qDebug().noquote()<<test.toInt();
 //      qDebug().noquote()<<cfile->function_source;
 //    qDebug().noquote()<<f->URL;
-    qDebug().noquote()<<f->c[0]->source;
-    qDebug().noquote()<<f->c[1]->source;
-     qDebug().noquote()<<f->c[0]->function_name;
-    qDebug().noquote()<<f->c[1]->function_name;
+//    qDebug().noquote()<<f->c[0]->source;
+//    qDebug().noquote()<<f->c[1]->source;
+//     qDebug().noquote()<<f->c[0]->function_name;
+//    qDebug().noquote()<<f->c[1]->function_name;
 //     qDebug().noquote()<<f->c[1]->name;
 //     qDebug().noquote()<<f->c[1]->function_used;
 //     qDebug().noquote()<<file_name;
 //     qDebug().noquote()<<file_addr;
-
+    //MainWindow w;
+    //w.show();
     return a.exec();
 }
