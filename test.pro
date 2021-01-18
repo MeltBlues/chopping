@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         c.cpp \
+        entry.cpp \
         file.cpp \
         main.cpp \
         postgresql.cpp \
@@ -34,6 +35,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     c.h \
+    entry.h \
     file.h \
     postgresql.h \
     project.h \
